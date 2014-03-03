@@ -1,0 +1,15 @@
+
+{% block side_bar_block %}
+{% if categories%}
+    <ul>
+        {% for cat in categories %}
+            <li><a href="/rango/category/{{ cat.url }}">{{ cat.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <strong>No categories at present.</strong>
+{% endif %}
+
+
+{% endblock %}

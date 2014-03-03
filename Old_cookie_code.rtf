@@ -1,0 +1,103 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265
+{\fonttbl\f0\fmodern\fcharset0 Courier;\f1\fmodern\fcharset0 Courier-Bold;}
+{\colortbl;\red255\green255\blue255;\red246\green246\blue246;\red8\green26\blue96;\red50\green91\blue142;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww23800\viewh35820\viewkind0
+\deftab720
+\pard\pardeftab720
+
+\f0\fs26 \cf0 \cb2 Wrong:\
+\{% block body_block%\}\
+<div class="hero-unit">\
+\pard\pardeftab720
+
+\f1\b \cf3 <div
+\f0\b0 \cf0  \cf4 class="hero-unit"
+\f1\b \cf3 >
+\f0\b0 \cf0 \
+    <h1>Add a category</h1>\
+    
+\f1\b \cf3 <h1>
+\f0\b0 \cf0 Add a Category
+\f1\b \cf3 </h1>
+\f0\b0 \cf0 \
+    <br/>\
+    <div class=container">\
+        <form class="span6" id="category_form" method="post" action="/rango/add_category/">\
+            \{% csrf_token %\}\
+                \{% for hidden in form.hidden_fields %\}\
+                    \{\{ hidden \}\}\
+                \{% endfor %\}\
+\
+                \{% for field in form.visible_fields %\}\
+                    \{\{ field.errors \}\}\
+                    \{\{ field.help_text \}\}<br />\
+                    \{\{ field \}\}\
+                \{% endfor %\}\
+        \
+                <br />\
+                <button class="btn btn-primary" type="submit" name="submit">Create Category</button>\
+        </form>\
+    </div>\
+</div>\
+\{% endblock %\}\
+\
+Right:\
+\{% block body_block %\}\
+
+\f1\b \cf3 <div
+\f0\b0 \cf0  \cf4 class="hero-unit"
+\f1\b \cf3 >
+\f0\b0 \cf0 \
+    
+\f1\b \cf3 <h1>
+\f0\b0 \cf0 Add a Category
+\f1\b \cf3 </h1>
+\f0\b0 \cf0 \
+    
+\f1\b \cf3 <br/>
+\f0\b0 \cf0 \
+    
+\f1\b \cf3 <div
+\f0\b0 \cf0  \cf4 class="container"
+\f1\b \cf3 >
+\f0\b0 \cf0 \
+        
+\f1\b \cf3 <form
+\f0\b0 \cf0  \cf4 class="span6"\cf0  \cf4 id="category_form"\cf0  \cf4 method="post"\cf0  \cf4 action="/rango/add_category/"
+\f1\b \cf3 >
+\f0\b0 \cf0 \
+            \{% csrf_token %\}\
+            \{% for hidden in form.hidden_fields %\}\
+            \{\{ hidden \}\}\
+            \{% endfor %\}\
+\
+            \{% for field in form.visible_fields %\}\
+            \{\{ field.errors \}\}\
+            \{\{ field.help_text \}\}
+\f1\b \cf3 <br/>
+\f0\b0 \cf0 \
+            \{\{ field \}\}\
+            \{% endfor %\}\
+\
+            
+\f1\b \cf3 <br/>
+\f0\b0 \cf0 \
+            
+\f1\b \cf3 <button
+\f0\b0 \cf0  \cf4 class="btn btn-primary"\cf0  \cf4 type="submit"\cf0  \cf4 name="submit"
+\f1\b \cf3 >
+\f0\b0 \cf0 Create Category
+\f1\b \cf3 </button>
+\f0\b0 \cf0 \
+        
+\f1\b \cf3 </form>
+\f0\b0 \cf0 \
+    
+\f1\b \cf3 </div>
+\f0\b0 \cf0 \
+
+\f1\b \cf3 </div>
+\f0\b0 \cf0 \
+\{% endblock %\}\
+}

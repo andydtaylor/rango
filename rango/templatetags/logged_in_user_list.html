@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Logged in Users</title>
+</head>
+<body>
+
+{% if users %}
+<ul class="user-list">
+    {% for user in users %}
+    <li>{{ user }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+
+
+</body>
+</html>

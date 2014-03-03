@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rango</title>
+    </head>
+
+    <body>
+        <h1>{{ category_name }}</h1>
+        {% if category %}
+            {% if pages %}
+            <ul>
+                {% for page in pages %}
+                <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+                {% endfor %}
+            </ul>
+            {% else %}
+                <strong>No pages currently in category.</strong>
+            {% endif %}
+
+            <p>
+            {%  if user.is_authenticated  %}
+                Click
+                    <a href="{% url "rango:add_page" category_name_url %}">here</a>
+                to add a new page
+            {% else %}
+                Register or login as a user to add categories and pages<br>
+            {% endif %}
+            </p>
+
+
+        {% else %}
+            The specified category {{ category_name }} does not exist!
+            <p>
+            Click
+                <a href="{% url "rango:add_specific_category" category_name_url %}">here</a>
+            to add a new category
+            </p>
+        {% endif %}
+    </body>
+
+
+
+
+</html>
